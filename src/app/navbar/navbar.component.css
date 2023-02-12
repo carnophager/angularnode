@@ -1,0 +1,28 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+a:hover {
+  color: #00ffd9;
+}
+
+mat-nav-list
+{
+  padding-top: 25px;
+  width: 350px;
+
+}
+
+mat-nav-list a {
+  line-height: 40px;
+  vertical-align: middle;
+}
+mat-nav-list a span {
+  display: block;
+  line-height: 40px;
+  vertical-align: middle;
+}
+
+mat-nav-list mat-icon {
+vertical-align: -5px;
+}

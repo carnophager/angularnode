@@ -1,0 +1,26 @@
+<div style="height: calc(100vh - 80px); overflow: hidden;">
+
+  <mat-card *ngIf="user_service.authenticated.value">
+    You are logged in as {{email}}
+    <a routerLink="/" mat-button (click)="onLogout()"><span style="float:left;">Logout</span><mat-icon>logout</mat-icon></a>
+  </mat-card>
+  <mat-card *ngIf="!user_service.authenticated.value">
+    <form (submit)="onLogin(loginform)" #loginform="ngForm">
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput
+               name="email"
+               ngModel
+               email
+               required #emailInput="ngModel">
+        <mat-error *ngIf="emailInput.invalid">Please give a valid email</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput name="password" ngModel>
+      </mat-form-field>
+
+      <button class="btn btn-primary" type="submit">Login</button>
+    </form>
+  </mat-card>
+</div>

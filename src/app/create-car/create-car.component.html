@@ -1,0 +1,63 @@
+<div style="height: calc(100vh - 80px)">
+
+  <div class="container">
+    <mat-card>
+        <mat-card-title>Create a Car</mat-card-title>
+        <mat-card-content>
+          <form (submit)="onCreate(createform)" #createform="ngForm">
+
+            <mat-form-field>
+              <input matInput
+                     type="text"
+                     name="brand"
+                     ngModel
+                     required
+                     #brandInput="ngModel"
+                     placeholder="Please give the brand">
+              <mat-error *ngIf="brandInput.invalid">Brand is empty</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput
+                     type="text"
+                     name="model"
+                     ngModel
+                     required
+                     #modelInput="ngModel"
+                     placeholder="Please give a model">
+              <mat-error *ngIf="modelInput.invalid">Model is empty</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput
+                     type="text"
+                     name="power"
+                     ngModel
+                     required
+                     #powerInput="ngModel"
+                     placeholder="Please enter power value">
+              <mat-error *ngIf="powerInput.invalid">Power value is empty</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput
+                     type="number"
+                     name="seats"
+                     ngModel
+                     required
+                     #seatsInput="ngModel"
+                     placeholder="Please set seats amount">
+              <mat-error *ngIf="seatsInput.invalid">Seats value is empty</mat-error>
+            </mat-form-field>
+
+            <input #fileInput style="display: none;" type="file" (change)="onFileSelected($event)">
+            <button matInput class="btn btn-outline-success" type="button" (click)="fileInput.click()">
+              Choose Image
+            </button><br /><br />
+            <button mat-raised-button color="primary" type="submit">Create New Car</button>
+
+          </form>
+        </mat-card-content>
+    </mat-card>
+  </div>
+</div>

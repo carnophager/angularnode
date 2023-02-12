@@ -1,0 +1,13 @@
+mat-card-title {
+  padding: 5px;
+  margin: 5px 0 0 12px;
+}
+.container {
+  max-width: 60%;
+  margin: 70px auto auto auto;
+}
+
+mat-form-field
+{
+  width: 100%;
+}
